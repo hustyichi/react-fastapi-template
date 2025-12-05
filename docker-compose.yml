@@ -44,7 +44,7 @@ services:
     restart: always
   frontend:
     build:
-      context: ./nextjs-frontend
+      context: ./react-frontend
     user: node
     ports:
       - "3000:3000"
@@ -52,11 +52,11 @@ services:
       - my_network
     environment:
       NODE_ENV: development
-      API_BASE_URL: http://backend:8000
+      VITE_API_BASE_URL: http://backend:8000
       OPENAPI_OUTPUT_FILE: ./shared-data/openapi.json
     volumes:
-      - ./nextjs-frontend:/app
-      - nextjs-node-modules:/app/node_modules
+      - ./react-frontend:/app
+      - react-node-modules:/app/node_modules
       - ./local-shared-data:/app/shared-data
   mailhog:
     image: mailhog/mailhog
@@ -77,7 +77,7 @@ services:
 
 volumes:
   postgres_data:
-  nextjs-node-modules:
+  react-node-modules:
   fastapi-venv:
   redis_data:
 

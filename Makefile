@@ -2,7 +2,7 @@
 
 # Variables
 BACKEND_DIR=fastapi_backend
-FRONTEND_DIR=nextjs-frontend
+FRONTEND_DIR=react-frontend
 DOCKER_COMPOSE=docker compose
 
 # Help
