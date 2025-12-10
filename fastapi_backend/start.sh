@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Running database migrations..."
+uv run alembic upgrade head
+
 if [ -f /.dockerenv ]; then
     echo "Running in Docker"
     # Use uv run to ensure we're using the virtual environment
